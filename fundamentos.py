@@ -370,3 +370,38 @@ del pessoa['cursos']
 print(pessoa)
 pessoa.clear()
 print(pessoa)
+
+#Conjuntos
+a = {1, 2, 3}
+print(type(a))
+#print(a[0])
+a = set('coddder')
+print(a)
+print('3' in a, 4 not in a)
+{1,2,3} == {3,2,1,3}
+
+c1 = {1,2}
+c2 = {2,3}
+
+print(c1.union(c2))
+print(c1.intersection(c2))
+c1.update(c2)
+print(c1)
+print(c2 <= c1)
+print(c1 >= c2)
+
+print({1,2,3} - {2})
+print(c1-c2)
+c1 -= {2}
+print(c1)
+
+#Interpolação
+from string import Template
+nome, idade = 'ana', 23
+
+print('Nome: %s, Idade: %i' %(nome, idade)) #mais antiga
+print('Nome: {0}, Idade: {1}'.format(nome, idade)) #python < 3.6
+print(f'Nome: {nome}, Idade: {idade}') #python >= 3.6
+
+s = Template('Nome: $nome, Idade: $idade')
+print(s.substitute(nome=nome, idade=idade))
